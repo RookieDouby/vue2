@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://cdn.bootcss.com/vue/2.0.3/vue.js"></script>
+</head>
+<body>
+    <div id="app">{{ message }}</div>
+    <div id="app-2">
+        <span v-bind:title="message">Hover to see information</span>
+    </div>
+    <div id="app-3">
+        <p v-if="isShownText">Now you see me cauz I let it be!</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue'
+            }
+        });
+
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: "Page loaded in " + new Date()
+            }
+        });
+
+        var app3 = new Vue({
+            el: '#app-3',
+            data: {
+                isShownText: true
+            }
+        });
+    </script>
+</body>
+</html>
